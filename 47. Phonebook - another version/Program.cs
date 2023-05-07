@@ -13,7 +13,7 @@ namespace Phonebook
             Console.WriteLine("4 Search contacts");
             Console.WriteLine("To exit insert x");
 
-
+            
             var userInput = Console.ReadLine();
 
             var phoneBook = new Phonebook();
