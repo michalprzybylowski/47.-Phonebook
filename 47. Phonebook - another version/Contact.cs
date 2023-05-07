@@ -14,8 +14,38 @@ namespace Phonebook
             Number = number;
 
         }
-        public string Name { get; set; }
+        public string Name
+        {
+            get { return Name; }
+            set
+            {
+                if (value.Length < 4)
+                {
+                    Console.WriteLine("Invalid contact name(minimum letters 4)");
+                }
+                else
+                {
+                    Name = value;
+                }
 
-        public string Number { get; set; }
+            }
+        }
+
+        public string Number
+        {
+            get { return Number; }
+            set
+            {
+                if (value.Length < 9)
+                {
+                    Console.WriteLine("Invalid contact name(minimum 9 numbers)");
+                }
+                else
+                {
+                    Number = value;
+                }
+
+            }
+        }
     }
 }

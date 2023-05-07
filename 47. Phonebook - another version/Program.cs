@@ -11,7 +11,7 @@ namespace Phonebook
             Console.WriteLine("2 Display contact by number");
             Console.WriteLine("3 Display all contacts");
             Console.WriteLine("4 Search contacts");
-            Console.WriteLine("To exit insert x");
+            Console.WriteLine("To exit insert q");
 
             
             var userInput = Console.ReadLine();
@@ -50,7 +50,7 @@ namespace Phonebook
                         phoneBook.DisplayMatchingContacts(searchPhrase);
 
                         break;
-                        case "x":
+                   case "q":
                         return;
                     default:
                         Console.WriteLine("Invalid operation");
