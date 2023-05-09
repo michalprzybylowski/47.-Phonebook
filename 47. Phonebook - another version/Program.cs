@@ -6,15 +6,13 @@ namespace Phonebook
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to phonebook application");
+            Console.WriteLine("Welcome to phonebook application(choose a number):");
             Console.WriteLine("1 Add contact");
             Console.WriteLine("2 Display contact by number");
             Console.WriteLine("3 Display all contacts");
             Console.WriteLine("4 Search contacts");
             Console.WriteLine("To exit insert q");
 
-            string Number = null;
-            string Name = null;
             var userInput = Console.ReadLine();
 
             var phoneBook = new Phonebook();
@@ -23,42 +21,9 @@ namespace Phonebook
                 switch (userInput)
                 {
                     case "1":
-                        Console.WriteLine("Insert number:");
-                        string valNumber = Console.ReadLine();
-                        Console.WriteLine("Insert name:");
-                        string valName = Console.ReadLine();
-                        if (valNumber.Length < 9)
-                        {
-                            Console.WriteLine("Cant set");
-                            valNumber = null;
-                        }
-                        else
-                        {
-                            Number = valNumber;
-                        }
-                        if (valName.Length < 4)
-                        {
-                            Console.WriteLine("Cant set");
-                            valNumber = null;
-                        }
-                        else
-                        {
-                            Name = valName;
-                        }
-                        bool validation = !string.IsNullOrEmpty(Name) || !string.IsNullOrEmpty(Number);
-                        if (validation == false)
-                        {
-                            Console.WriteLine("Contact can't be added");
                             
-                        }
-                        else
-                        {
-                            var newContact = new Contact(Name, Number);
-                            phoneBook.AddContact(newContact);
-                        }
-
-                       
-
+                        phoneBook.AddContact();     
+                        
                         break;
                     case "2":
                         Console.WriteLine("Insert number");
