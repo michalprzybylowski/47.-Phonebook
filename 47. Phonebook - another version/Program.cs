@@ -13,7 +13,8 @@ namespace Phonebook
             Console.WriteLine("4 Search contacts");
             Console.WriteLine("To exit insert q");
 
-            
+            string Number = null;
+            string Name = null;
             var userInput = Console.ReadLine();
 
             var phoneBook = new Phonebook();
@@ -23,13 +24,40 @@ namespace Phonebook
                 {
                     case "1":
                         Console.WriteLine("Insert number:");
-                        var number = Console.ReadLine();
+                        string valNumber = Console.ReadLine();
                         Console.WriteLine("Insert name:");
-                        var name = Console.ReadLine();
+                        string valName = Console.ReadLine();
+                        if (valNumber.Length < 9)
+                        {
+                            Console.WriteLine("Cant set");
+                            valNumber = null;
+                        }
+                        else
+                        {
+                            Number = valNumber;
+                        }
+                        if (valName.Length < 4)
+                        {
+                            Console.WriteLine("Cant set");
+                            valNumber = null;
+                        }
+                        else
+                        {
+                            Name = valName;
+                        }
+                        bool validation = !string.IsNullOrEmpty(Name) || !string.IsNullOrEmpty(Number);
+                        if (validation == false)
+                        {
+                            Console.WriteLine("Contact can't be added");
+                            
+                        }
+                        else
+                        {
+                            var newContact = new Contact(Name, Number);
+                            phoneBook.AddContact(newContact);
+                        }
 
-                        var newContact = new Contact(name, number);
-
-                        phoneBook.AddContact(newContact);
+                       
 
                         break;
                     case "2":

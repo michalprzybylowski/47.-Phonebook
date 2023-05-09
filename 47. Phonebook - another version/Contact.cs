@@ -8,6 +8,8 @@ namespace Phonebook
 {
     internal class Contact
     {
+        private string name;
+        private string number;
         public Contact(string name, string number) 
         {
             Name = name;
@@ -16,16 +18,18 @@ namespace Phonebook
         }
         public string Name
         {
-            get { return Name; }
+            get { return name; }
             set
             {
                 if (value.Length < 4)
                 {
                     Console.WriteLine("Invalid contact name(minimum letters 4)");
+                    
+                    
                 }
                 else
                 {
-                    Name = value;
+                    name = value;
                 }
 
             }
@@ -33,16 +37,17 @@ namespace Phonebook
 
         public string Number
         {
-            get { return Number; }
+            get { return number; }
             set
             {
                 if (value.Length < 9)
                 {
-                    Console.WriteLine("Invalid contact name(minimum 9 numbers)");
+                    Console.WriteLine("Invalid contact number(minimum 9 numbers)");
+                    
                 }
                 else
                 {
-                    Number = value;
+                    number = value;
                 }
 
             }
