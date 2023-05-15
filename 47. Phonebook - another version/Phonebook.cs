@@ -22,7 +22,7 @@ namespace Phonebook
             if (valNumber.Length < 9)
             {
                 Console.WriteLine("Can't set because phone number must be at least 9 numbers ");
-                valNumber = null;
+                
                 Number = string.Empty;
                 
             }
@@ -33,7 +33,7 @@ namespace Phonebook
             if (valName.Length < 4)
             {
                 Console.WriteLine("Can't set because name must be at least 4 letters");
-                valNumber = null;
+                
                 Name = string.Empty;
 
 
@@ -94,5 +94,22 @@ namespace Phonebook
             var matchingContacts = Contacts.Where(c => c.Name.Contains(searchPhrase)).ToList();
             DisplayContactDetails(matchingContacts);
         }
+
+        public void DeleteContact(string deleteContact)
+        {
+            var contact = Contacts.FirstOrDefault(c => c.Number == deleteContact);
+
+            if (contact == null)
+            {
+                Console.WriteLine("Contact not found");
+
+            }
+            else
+            {
+                Contacts.Remove(contact);
+            }
+            
+        }
+        
     }
 }
